@@ -9,7 +9,7 @@ from datetime import datetime
 service = Service(ChromeDriverManager().install())
 navegador = webdriver.Chrome(service=service)
 # acessar power bi via web
-navegador.get('https://app.powerbi.com/groups/me/reports/309b36a4-a177-4005-81b0-6dcfc6eb2b6a/ReportSection?experience=power-bi')
+navegador.get('Adicionar URL')
 time.sleep(7)
 
 # maximar navegador
