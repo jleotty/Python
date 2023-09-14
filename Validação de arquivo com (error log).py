@@ -19,7 +19,7 @@ try:
     navegador = webdriver.Chrome(service=service)
 
     # Acessar o Power BI via web
-    navegador.get('https://app.powerbi.com/groups/me/reports/ba471564-8f09-4704-b541-92ea3000e536/ReportSection?experience=power-bi')
+    navegador.get('adicionar URL')
     time.sleep(7)
 
     # Maximizar o navegador
