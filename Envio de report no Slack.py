@@ -25,12 +25,12 @@ try:
     time.sleep(2)
 
     # inserir e-mail
-    pyautogui.write('x856594@gruposantander.com')
+    pyautogui.write('e-mail')
     pyautogui.press('enter')
     time.sleep(15)
 
     # inserir usuário novamente
-    pyautogui.write('x856594')
+    pyautogui.write('usuário')
     time.sleep(3)
 
     # Ir para o campo abaixo para que seja possível inserir a senha
@@ -38,7 +38,7 @@ try:
     time.sleep(3)
 
     # inserir senha
-    pyautogui.write('Pago@@@2023')
+    pyautogui.write('senha')
     pyautogui.press('enter')
     time.sleep(20)
 
@@ -79,7 +79,7 @@ try:
     
     pyautogui.hotkey('win', 'r')
     time.sleep(3)
-    pyautogui.write(r'C:\Users\julian.dose\AppData\Local\slack\slack.exe')
+    pyautogui.write(r'local do executável da aplicação')
     time.sleep(15)
     pyautogui.press('enter')
     time.sleep(4)
