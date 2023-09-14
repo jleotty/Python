@@ -69,9 +69,9 @@ if patterns_not_found:
     # Configurações do e-mail
     smtp_server = 'smtp.office365.com'
     smtp_port = 587  # Porta padrão para TLS
-    email_from = 'pagonxtteste@outlook.com'  # Seu endereço de e-mail
-    email_password = 'Jaera@2020'  # Sua senha de e-mail
-    email_to = 'x856594@gruposantander.com'  # Endereço de e-mail do destinatário
+    email_from = 'e-mail'  # Seu endereço de e-mail
+    email_password = 'Senha de e-mail'  # Sua senha de e-mail
+    email_to = 'e-mail destinatário'  # Endereço de e-mail do destinatário
 
     # Conteúdo do e-mail
     subject = "Alerta de Arquivos Incoming TEF Master Não Encontrados"
