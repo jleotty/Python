@@ -10,7 +10,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # Configurar o sistema de registro
-log_filename = "Validação do arquivo (error log).txt"
+log_filename = "Validação T461 E T464 (error log).txt"
 logging.basicConfig(filename=log_filename, level=logging.ERROR, format="%(asctime)s [%(levelname)s]: %(message)s")
 
 try:
@@ -19,7 +19,7 @@ try:
     navegador = webdriver.Chrome(service=service)
 
     # Acessar o Power BI via web
-    navegador.get('adicionar URL')
+    navegador.get('ADICIONAR URL')
     time.sleep(7)
 
     # Maximizar o navegador
@@ -53,6 +53,7 @@ try:
     file_patterns = [
         r"NOME DO ARQUIVO",
         r"NOME DO ARQUIVO"
+        # Adicione até 5 padrões aqui, se necessário
     ]
 
     # Lista para armazenar padrões não encontrados
@@ -63,7 +64,7 @@ try:
         pattern = re.compile(pattern, re.IGNORECASE)
         matches = pattern.findall(navegador.page_source)
         if not matches:
-            patterns_not_found.append("Arquivo {} não encontrado.".format(pattern.pattern))
+            patterns_not_found.append(f"Arquivo {pattern.pattern} não encontrado.")
 
     # Fechar o navegador
     navegador.quit()
@@ -73,12 +74,12 @@ try:
         # Configurações do e-mail
         smtp_server = 'smtp.office365.com'
         smtp_port = 587  # Porta padrão para TLS
-        email_from = 'E-MAIL'  # Seu endereço de e-mail
-        email_password = 'SENHA'  # Sua senha de e-mail
-        email_to = 'E-AMAIL DESTINATÁRIO'  # Endereço de e-mail do destinatário
+        email_from = 'pagonxtteste@outlook.com'  # Seu endereço de e-mail
+        email_password = 'Jaera@2020'  # Sua senha de e-mail
+        email_to = 'x856594@gruposantander.com'  # Endereço de e-mail do destinatário
 
         # Conteúdo do e-mail
-        subject = "Alerta de Arquivos não Encontrados"
+        subject = "Alerta de Arquivos T461 e T464 não Encontrados"
         email_body = "\n\n".join(patterns_not_found)
 
         # Criar o objeto MIMEText
@@ -90,11 +91,10 @@ try:
 
         try:
             # Enviar o e-mail via SMTP do Outlook
-            server = smtplib.SMTP(smtp_server, smtp_port)
-            server.starttls()
-            server.login(email_from, email_password)
-            server.sendmail(email_from, email_to, msg.as_string())
-            server.quit()
+            with smtplib.SMTP(smtp_server, smtp_port) as server:
+                server.starttls()
+                server.login(email_from, email_password)
+                server.sendmail(email_from, email_to, msg.as_string())
             print("E-mail enviado!")
         except Exception as e:
             print("Ocorreu um erro ao enviar o e-mail:", str(e))
@@ -107,19 +107,21 @@ try:
         print("Todos os arquivos foram encontrados.")
 
 except Exception as ex:
-    # Se ocorrer uma exceção, envie um e-mail de notificação
-    print("Ocorreu um erro durante a execução do código:", str(ex))
+    # Se ocorrer uma exceção, envie um e-mail de notificação e registre no arquivo de log
+    error_message = "Ocorreu um erro durante a execução do código: " + str(ex)
+    print(error_message)
+    logging.error(error_message)
 
     # Configurações do e-mail de notificação
     smtp_server = 'smtp.office365.com'
     smtp_port = 587  # Porta padrão para TLS
-    email_from = 'e-mail'  # Seu endereço de e-mail
-    email_password = 'senha de e-mail'  # Sua senha de e-mail
-    email_to = 'e-mail destinatário'  # Endereço de e-mail do destinatário
+    email_from = 'pagonxtteste@outlook.com'  # Seu endereço de e-mail
+    email_password = 'Jaera@2020'  # Sua senha de e-mail
+    email_to = 'x856594@gruposantander.com'  # Endereço de e-mail do destinatário
 
     # Conteúdo do e-mail de notificação
-    subject = "Erro na execução do script validação dos arquivos "
-    email_body = "Ocorreu um erro durante a execução do script, realizar validação dos arquivos  manualmente e verificar script!"
+    subject = "Erro na execução do script"
+    email_body = "Ocorreu um erro durante a execução do script, realizar validação de arquivo manualmente e verificar script!"
 
     # Criar o objeto MIMEText
     msg = MIMEMultipart()
@@ -130,11 +132,10 @@ except Exception as ex:
 
     try:
         # Enviar o e-mail de notificação via SMTP do Outlook
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()
-        server.login(email_from, email_password)
-        server.sendmail(email_from, email_to, msg.as_string())
-        server.quit()
-        print("Falha no script, enviado e-mail de notificação!")
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()
+            server.login(email_from, email_password)
+            server.sendmail(email_from, email_to, msg.as_string())
+        print("E-mail de notificação enviado!")
     except Exception as e:
         print("Ocorreu um erro ao enviar o e-mail de notificação:", str(e))
