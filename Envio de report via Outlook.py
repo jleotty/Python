@@ -22,12 +22,12 @@ click.click()
 time.sleep(2)
 
 # inserir e-mail
-pyautogui.write('x856594@gruposantander.com')
+pyautogui.write('e-mail')
 pyautogui.press('enter')
 
 time.sleep(8)
 # inserir usuário novamente
-pyautogui.write('x856594')
+pyautogui.write('usuário')
 time.sleep(3)
 
 # Ir para o campo abaixo para que seja possível inserir a senha
@@ -35,7 +35,7 @@ pyautogui.press('tab')
 time.sleep(3)
 
 # inserir senha
-pyautogui.write('Pago@@@2023')
+pyautogui.write('senha')
 pyautogui.press('enter')
 time.sleep(25)
 
