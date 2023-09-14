@@ -91,7 +91,7 @@ pyautogui.hotkey('win', 'r')
 time.sleep(2)
 
 # Caminho onde está o arquivo do e-mail
-pyautogui.write( r'C:\Users\julian.dose\OneDrive - Processor\Documentos\Metricas\e-mail.msg')
+pyautogui.write( r'caminho do arquivo de e-mail')
 time.sleep(2)
 
 # Pressionar enter para inciar
