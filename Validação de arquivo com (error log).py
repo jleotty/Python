@@ -74,9 +74,9 @@ try:
         # Configurações do e-mail
         smtp_server = 'smtp.office365.com'
         smtp_port = 587  # Porta padrão para TLS
-        email_from = 'pagonxtteste@outlook.com'  # Seu endereço de e-mail
-        email_password = 'Jaera@2020'  # Sua senha de e-mail
-        email_to = 'x856594@gruposantander.com'  # Endereço de e-mail do destinatário
+        email_from = 'E-MAIL'  # Seu endereço de e-mail
+        email_password = 'SENHA'  # Sua senha de e-mail
+        email_to = 'E-MAIL'  # Endereço de e-mail do destinatário
 
         # Conteúdo do e-mail
         subject = "Alerta de Arquivos T461 e T464 não Encontrados"
@@ -115,9 +115,9 @@ except Exception as ex:
     # Configurações do e-mail de notificação
     smtp_server = 'smtp.office365.com'
     smtp_port = 587  # Porta padrão para TLS
-    email_from = 'pagonxtteste@outlook.com'  # Seu endereço de e-mail
-    email_password = 'Jaera@2020'  # Sua senha de e-mail
-    email_to = 'x856594@gruposantander.com'  # Endereço de e-mail do destinatário
+    email_from = 'E-MAIL'  # Seu endereço de e-mail
+    email_password = 'SENHA'  # Sua senha de e-mail
+    email_to = 'E-MAIL DESTINATÁRIO'  # Endereço de e-mail do destinatário
 
     # Conteúdo do e-mail de notificação
     subject = "Erro na execução do script"
