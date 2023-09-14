@@ -45,13 +45,10 @@ time.sleep(30)
 
 # Definir os padrões de arquivo a serem verificados
 file_patterns = [
-    r"MCI.AR.T112.*?01",
-    r"MCI.AR.T112.*?02",
-    r"MCI.AR.T112.*?03",
-    r"MCI.AR.T112.*?04",
-    r"MCI.AR.T112.*?05",
-    r"MCI.AR.T112.*?06"
-    # Adicione até 5 padrões aqui, se necessário
+    r"NOME DO ARQUIVO",
+    r"NOME DO ARQUIVO",
+    r"NOME DO ARQUIVO",
+    r"NOME DO ARQUIVO"
 ]
 
 # Lista para armazenar padrões não encontrados
