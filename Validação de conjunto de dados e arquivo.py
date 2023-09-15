@@ -27,7 +27,7 @@ try:
     navegador.maximize_window()
     
     # Acessar o Power BI via web
-    navegador.get('https://app.powerbi.com/groups/me/datasets/1dd6b50f-8133-4fc3-bcea-a952a25367e4/details?experience=power-bi')
+    navegador.get('Adicionar URL do conjunto de dados')
     time.sleep(7)
 
 
@@ -69,9 +69,9 @@ try:
             # Configurações do e-mail
             smtp_server = 'smtp.office365.com'
             smtp_port = 587  # Porta padrão para TLS
-            email_from = 'pagonxtteste@outlook.com'  # Seu endereço de e-mail
-            email_password = 'Jaera@2020'  # Sua senha de e-mail
-            email_to = 'x856594@gruposantander.com'  # Endereço de e-mail do destinatário
+            email_from = 'e-mail'  # Seu endereço de e-mail
+            email_password = 'senha'  # Sua senha de e-mail
+            email_to = 'e-mail destinatário'  # Endereço de e-mail do destinatário
 
             # Criar o objeto MIMEText
             msg = MIMEMultipart()
@@ -104,7 +104,7 @@ try:
         # Validar carregamento do Conjunto de dados
         print("falha no carregamento do conjunto de dados não identificada. Continuando a execução.")
 
-    navegador.get('https://app.powerbi.com/groups/me/reports/8997b3a8-1fe8-448d-9fa5-baa4e53cb307/ReportSection?experience=power-bi')
+    navegador.get('adicionar URL do Dashboard do Power BI')
     time.sleep(10)
 
     #Dar refresh no Dashboard
@@ -119,12 +119,8 @@ try:
 
     # Definir os padrões de arquivo a serem verificados
     file_patterns = [
-        r"MCI.AR.TN70.C.E0091127.*?001",
-        r"MCI.AR.TN70.C.E0091127.*?002",
-        r"MCI.AR.TN70.C.E0091127.*?003",
-        r"MCI.AR.TN70.C.E0091127.*?004",
-        r"MCI.AR.TN70.C.E0091127.*?005",
-        r"MCI.AR.TN70.C.E0091127.*?006"
+        r"nome do arquivo",
+        r"nome do arquivo"
         # Adicione até 5 padrões aqui, se necessário
     ]
 
@@ -146,9 +142,9 @@ try:
         # Configurações do e-mail
         smtp_server = 'smtp.office365.com'
         smtp_port = 587  # Porta padrão para TLS
-        email_from = 'pagonxtteste@outlook.com'  # Seu endereço de e-mail
-        email_password = 'Jaera@2020'  # Sua senha de e-mail
-        email_to = 'x856594@gruposantander.com'  # Endereço de e-mail do destinatário
+        email_from = 'e-mail'  # Seu endereço de e-mail
+        email_password = 'senha'  # Sua senha de e-mail
+        email_to = 'e-mail destinatário'  # Endereço de e-mail do destinatário
 
         # Conteúdo do e-mail
         subject = " Arquivo Arquivos de By Pass Fuente Papel não encontrado"
@@ -192,9 +188,9 @@ except Exception as ex:
         # Configurações do e-mail de notificação
         smtp_server = 'smtp.office365.com'
         smtp_port = 587  # Porta padrão para TLS
-        email_from = 'pagonxtteste@outlook.com'  # Seu endereço de e-mail
-        email_password = 'Jaera@2020'  # Sua senha de e-mail
-        email_to = 'x856594@gruposantander.com'  # Endereço de e-mail do destinatário
+        email_from = 'e-mail'  # Seu endereço de e-mail
+        email_password = 'senha'  # Sua senha de e-mail
+        email_to = 'e-mail destinatário'  # Endereço de e-mail do destinatário
 
         # Conteúdo do e-mail de notificação
         subject = "Erro na execução do script de validação dos arquivos TN70"
