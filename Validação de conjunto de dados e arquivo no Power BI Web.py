@@ -12,7 +12,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import NoSuchElementException
 
 # Configurar o sistema de registro
-log_filename = "Validação dos arquivos TN70 (error log).txt"
+log_filename = "Validação dos arquivos (error log).txt"
 logging.basicConfig(filename=log_filename, level=logging.ERROR, format="%(asctime)s [%(levelname)s]: %(message)s")
 
 # Variável de controle para verificar se o email de erro foi enviado
@@ -61,10 +61,10 @@ try:
             print("Erro no carregamento do conjunto de dados dos arquivos TN70")
 
             # Corpo do e-mail
-            email_body = "Erro no carregamento do conjunto de dados dos arquivos TN70, realizar validação dos arquivos manualmente. \n\nLink com as instruções: https://dev.azure.com/albatross-getnet/IT%20Support%20and%20Operations/_wiki/wikis/Geral/27076/Valida%C3%A7%C3%A3o-Incomming-Outgoing-Argentina-(Em-Constru%C3%A7%C3%A3o)\n  Cobrar envio de arquivo para Prosa através do e-mail 'cco@prosa.com.mx'."
+            email_body = "Erro no carregamento do conjunto de dados , realizar validação dos arquivos manualmente."
 
             # Definir o assunto do e-mail
-            subject = "Erro no carregamento do conjunto de dados dos arquivos TN70"
+            subject = "Erro no carregamento do conjunto de dados"
 
             # Configurações do e-mail
             smtp_server = 'smtp.office365.com'
@@ -132,7 +132,7 @@ try:
         pattern = re.compile(pattern, re.IGNORECASE)
         matches = pattern.findall(navegador.page_source)
         if not matches:
-            patterns_not_found.append(f'Arquivo {pattern.pattern} Arquivo Clearing Argentina não encontrado, realizar validação do arquivo manualmente. \n\nLink com as instruções: https://dev.azure.com/albatross-getnet/IT%20Support%20and%20Operations/_wiki/wikis/Geral/27076/Valida%C3%A7%C3%A3o-Incomming-Outgoing-Argentina-(Em-Constru%C3%A7%C3%A3o) \nCobrar envio de arquivo com a Prosa através do e-mail "cco@prosa.com.mx".')
+            patterns_not_found.append(f'Arquivo {pattern.pattern} Arquivo a não encontrado, realizar validação do arquivo manualmente.')
 
     # Fechar o navegador
     navegador.quit()
@@ -147,7 +147,7 @@ try:
         email_to = 'e-mail destinatário'  # Endereço de e-mail do destinatário
 
         # Conteúdo do e-mail
-        subject = " Arquivo Arquivos de By Pass Fuente Papel não encontrado"
+        subject = " Arquivo  não encontrado"
         email_body = "\n\n".join(patterns_not_found)
 
         # Criar o objeto MIMEText
@@ -193,8 +193,8 @@ except Exception as ex:
         email_to = 'e-mail destinatário'  # Endereço de e-mail do destinatário
 
         # Conteúdo do e-mail de notificação
-        subject = "Erro na execução do script de validação dos arquivos TN70"
-        email_body = f"Ocorreu um erro durante a execução do script de validação dos arquivos TN70, realizar validação dos arquivos manualmente. \n\n Link com as instruções: https://dev.azure.com/albatross-getnet/IT%20Support%20and%20Operations/_wiki/wikis/Geral/27076/Valida%C3%A7%C3%A3o-Incomming-Outgoing-Argentina-(Em-Constru%C3%A7%C3%A3o)\n Cobrar envio de arquivo com a Prosa através do e-mail 'cco@prosa.com.mx'."
+        subject = "Erro na execução do script de validação dos arquivos "
+        email_body = f"Ocorreu um erro durante a execução do script de validação dos arquivos, realizar validação dos arquivos manualmente."
 
         # Criar o objeto MIMEText
         msg = MIMEMultipart()
