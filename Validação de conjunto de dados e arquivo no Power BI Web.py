@@ -37,12 +37,12 @@ try:
     time.sleep(2)
 
     # Inserir o e-mail
-    pyautogui.write('x856594@gruposantander.com')
+    pyautogui.write('e-mail')
     pyautogui.press('enter')
     time.sleep(15)
 
     # Inserir o usuário novamente
-    pyautogui.write('x856594')
+    pyautogui.write('Usuário')
     time.sleep(3)
 
     # Navegar para o campo abaixo para inserir a senha
@@ -50,7 +50,7 @@ try:
     time.sleep(3)
 
     # Inserir a senha
-    pyautogui.write('Pago@@@2023')
+    pyautogui.write('Senha')
     pyautogui.press('enter')
     time.sleep(30)
 
