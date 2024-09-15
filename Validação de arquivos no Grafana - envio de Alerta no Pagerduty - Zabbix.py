@@ -13,7 +13,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from logging import StreamHandler
 from pyzabbix import ZabbixMetric, ZabbixSender
 from platform import node
-log_filename = "Acuse_Pesos_ciclo_1_log.txt"
+log_filename = "nome_do_log.txt"
 logging.basicConfig(filename=log_filename, level=logging.ERROR, format="%(asctime)s [%(levelname)s]: %(message)s")
 console_handler = StreamHandler()
 console_handler.setLevel(logging.INFO)
