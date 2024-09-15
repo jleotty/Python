@@ -69,9 +69,9 @@ try:
  
     #Validar arquivo definindo o inicio e final de sua moneclatura
     padrao = re.compile(r'Referência incial do arquivo.*Referência')
-    informacao_acuse_001 = soup.find(string=padrao)
-    if informacao_acuse_001:
-        print("O seguinte arquivo foi encontrado:", informacao_acuse_001.strip())
+    informacao_NOME_DO_ARQUIVO = soup.find(string=padrao)
+    if informacao_NOME_DO_ARQUIVO:
+        print("O seguinte arquivo foi encontrado:", informacao_NOME_DO_ARQUIVO.strip())
         # Envia status de sucesso para o Zabbix
         zhostname = node()
         metrics = [ZabbixMetric(zhostname, 'nome do item do zabbix', 'success')]
